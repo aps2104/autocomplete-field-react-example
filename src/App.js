@@ -55,12 +55,12 @@ const App = () => {
     <div className="container">
       <h2>Autocomplete Name Input</h2>
       <input
-        className="autocomplete"
+        className="autocomplete form-control"
         onChange={(e) => onChangeHandle(e)}
         value={inputValue}
         placeholder="Type Name"
       />
-      <div className="suggestions">
+      <ul className="suggestions list-group">
         {suggestion.map((s, id) => {
           return (
             <li
@@ -69,12 +69,13 @@ const App = () => {
                 setValue(s);
                 setSuggestion([]);
               }}
+              className="list-group-item"
             >
               {s}
             </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 };
